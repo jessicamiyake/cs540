@@ -6,3 +6,28 @@
 <p>In an uninformed search, only the <b>goal test</b> and the <b>successor function</b> are known. Uninformed search algorithims generate a search tree without any domain specific knowledge, i.e. heuristic values.</p>
 <br>
 <h2>Breadth-First Search (BFS)</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Breadth-First-Search-Algorithm.gif" alt="Breadth-first search visualization">
+<p>BFS expands the shallowest node first, then ripples out.</p>
+<p>BFS uses a <b>queue</b>, which is a First-in-first-out (FIFO) data structure.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/300px-Data_Queue.svg.png" alt="FIFO visualization">
+<p><b>Psuedocode</b></p>
+<script src="https://gist.github.com/jessicamiyake/0465b1e6884c2213feb7cbc1520ca144.js"></script>
+b = branching factor (assume finite), d = goal depth
+<table>
+  <tr>
+    <th>Complete?</th>
+    <th>Optimal</th>
+    <th>Time Complexity</th>
+    <th>Space Complexity</th>
+  </tr>
+  <tr>
+    <td>Yes!</td>
+    <td>Yes if edge cost is constant</td>
+    <td>O(b<sup>d</sup>)</td>
+    <td>O(b<sup>d</sup>)</td>
+  </tr>
+</table>
+<b>Complete? Yes!</b><br>
+<b>Optimal? Yes if edge cost is constant</b><br>
+<b>Time complexity: O(b<sup>d</sup>)</b><br>
+<b>Space complexity: O(b<sup>d</sup>)</b><br>

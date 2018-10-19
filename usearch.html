@@ -87,3 +87,49 @@
   <b>Space complexity: O(b<sup>d/2</sup>)</b><br>
   where b = branching factor (assume finite), d = goal depth</p>
 </article>
+
+<table>
+  <caption>Comparison of Uninformed Searches Performance</caption>
+  <tr>
+    <td></td>
+    <td>Complete</td>
+    <td>Optimal</td>
+    <td>Time</td>
+    <td>Space</td>
+  </tr>
+  <tr>
+    <td>BFS</td>
+    <td>Yes</td>
+    <td>Yes if*</td>
+    <td>O(b<sup>d</sup>)</td>
+    <td>O(b<sup>d</sup>)</td>
+  </tr>
+  <tr>
+    <td>UCS</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>O(b<sup>C*/&epsilon;</sup>)</td>
+    <td>O(b<sup>C*/&epsilon;</sup>)</td>
+  </tr>
+  <tr>
+    <td>DFS</td>
+    <td>No</td>
+    <td>No</td>
+    <td>O(b<sup>m</sup>)</td>
+    <td>O(bm)</td>
+  </tr>
+  <tr>
+    <td>IDS</td>
+    <td>Yes</td>
+    <td>Yes if*</td>
+    <td>O(b<sup>d</sup>)</td>
+    <td>O(bd)</td>
+  </tr>
+  <tr>
+    <td>BIBFS</td>
+    <td>Yes</td>
+    <td>Yes if*</td>
+    <td>O(b<sup>d/2</sup>)</td>
+    <td>O(b<sup>d/2</sup>)</td>
+  </tr>
+</table>

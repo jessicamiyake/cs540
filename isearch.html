@@ -1,0 +1,26 @@
+<title>Informed Search</title>
+
+<h1>Informed Search</h1>
+<p>An informed search uses domain-specific information to select which path to explore. For each node <i>n</i> there is a <b>heuristic function</b> <i>h(n)</i> that give the estimated cost from that node to the goal.</p>
+
+<h2>Greedy Best-First Search</h2>
+<p>Greedy best-first search will always expand the node that looks to be the closest to the goal, i.e. the one with the smallest <i>f</i>.</p>
+<p><i>f(n) = h(n)</i></p>
+<p>Not complete, not admissible.</p>
+
+<h2>A Search</h2>
+<p>The evaluation function for A search for node <i>n</i> considers <i>g(n)</i>, which is the cost from the start to node <i>n</i>.</p>
+<p><i>f(n) = g(n) + h(n)</i></p>
+<p>Not complete, not admissible.</p>
+
+<h2>A* Search</h2>
+<p>A* is the same as A search, but must satisfy <i>h(n) &le; h*(n)</i> where <i>h*(n)</i> is the true cost from <i>n</i> to the goal.</p>
+<p>A* is <b>complete</b> and <b>admissible</b>.</p>
+
+<h2>Iterative Deepening A* (IDA*)</h2>
+<p>IDA* performs DFS with a limit on <i>f(n)</i>, incrementing the limit until the goal is found.</p>
+<p>IDA* is <b>complete</b> and <b>optimal</b> but generally more costly than A*.</p>
+
+<h2>Beam Search</h2>
+<p>In beam search, the <b>priority queue</b> has a fixed size <i>k</i>, so only the <i>k</i> best nodes are kept as candidates for expansion, the rest are thrown away.</p>
+<p>Not complete, not admissible.</p>

@@ -13,10 +13,10 @@
 	<p><b>Sample space</b>: a space of events that are assigned probabilities, where events are binary, multi-valued, or continuous; but always mutually exclusive</p>
 	<p class="examples">Examples
 	<ul>
-		<li>Coin flip: \({head, tail}\)</li>
-		<li>Die roll: \({1, 2, 3, 4, 5, 6}\)</li>
+		<li>Coin flip: {head, tail}</li>
+		<li>Die roll: {1, 2, 3, 4, 5, 6}</li>
 	</ul></p>
-	<p><b>Random variable</b>: a variable, x, whose domain is the sample space and whose value is somewhat uncertain
+	<p><b>Random variable</b>: a variable, \(x\), whose domain is the sample space and whose value is somewhat uncertain
 	<ul>
 		<li>\(x\) = coin flip outcome</li>
 		<li>\(x\) = tomorrow's temperature</li>
@@ -27,18 +27,63 @@
 	<ol>
 		<li>For event \(A, P(A) &isin; [0,1]\)</li>
 		<li>For sample space \(S\), \(P(S) = 1\); and \(P(true) = 1\), \(P(false) = 0\)</li>
-		<li>If events \(A_1, A_2, A_3, \cdots\) are disjoint (mutually exclusive), then \(P(A_1 \cup A_2 \cup A_3 \cdots)=P(A_1)+P(A_2)+P(A_3)+\cdots\)</li>
-		<ul><li>It follows that for disjoint events \(A\) and \(B\), \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</li></ul>
+		<li>If events \(A_1, A_2, A_3, \cdots\) are disjoint (mutually exclusive), then \(P(A_1 \cup A_2 \cup A_3 \cdots)=P(A_1)+P(A_2)+P(A_3)+\cdots\)<br>
+		It follows that for disjoint events \(A\) and \(B\)<br>
+		\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</li>
 	</ol>
 	</article>
 	
-	<p><b>Joint probability</b>: the probability of two events occurring together at the same point in time.<br>
-	$$P(A, B) = P(A \cap B) = P(A)*P*(B)$$</p>
+	<p><b>Joint probability</b>: the probability of two events occurring together at the same point in time.</p>
+	$$P(A, B) = P(A \cap B) = P(A)*P(B)$$
 	
-	<p><b>Conditional probability</b>: the probability of an event $B$ given that event $A$ has already occurred, and that these events are dependent<br>
-	$$P(B|A) = \frac{P(A \cap B)}{P(A)}$$</p>
+	<p><b>Marginal probability</b>: the probability of a single event occurring unconditioned on any other events</p>
+
+	<p><b>Conditional probability</b>: the probability of an event \(B\) given that event \(A\) has already occurred, and that these events are dependent</p>
+	$$P(B|A) = \frac{P(A \cap B)}{P(A)}$$
+	For conditional probability on some other events \(C\)
+	$$P(A| B,C) = \frac{P(A,B |C)}{P(B|C)}$$
+
+	<p><b>Chain rule</b>: derived from the definition of conditional probability</p>
+	$$P(A, B) = P(B)*P(A|B) = P(A)*P(B|A)$$
+	$$P(A_1,A_2,\cdots,A_n) = P(A_1)*P(A_2|A_1)*P(A_3|A_1,A_2)*\cdots*P(A_n|A_1,A_2 \cdots A_{n-1})$$
+
+	<p><b>Bayes' Rule</b></p>
+	$$P(A|B) = \frac{P(A,B)}{P(B)} = \frac{P(B|A)P(A)}{P(B)}$$
+	<ul>
+		<li><b>Prior \(P(A)\)</b>: probability before any evidence</li>
+		<li><b>Likelihood \(P(B|A)\)</b>: assuming \(A\), how likely is the evidence</li>
+		<li><b>Posterior \(P(A|B)\)</b>: conditional probability after knowing evidence</li>
+		<li><b>Inference</b>: deriving unknown probability from known ones</li>
+	</ul>
+
+	<p><b>Identities for Independent Events</b></p>
+	<ul>
+		<li>\(P(A,B) = P(A)*P(B)\)</li>
+		<li>\(P(A|B) = P(A)\)</li>
+		<li>\(P(B|A) = P(B)\)</li>
+	</ul>
+
+	<p><b>Conditional independence</b>: two events \(A\) and \(B\) are conditionally independent given an event \(C\)</p>
+	$$P(A| B,C) = \frac{P(A \cap B |C)}{P(B|C)} = \frac{P(A|C)P(B|C)}{P(B|C)} = P(A|C)$$
 	
-    <h2>Natural Language</h2>
+    <h2>Natural Language Processing</h2>
+    <p><b>Word token</b>: occurrences of a word</p>
+    <p><b>Word type</b>: unique word</p>
+    <p><b>Vocabulary</b>: list of the word types</p>
+    <p><b>Zipf's Law</b>: given a large sample of words used, the frequency of any word is inversely proportional to its rank on the frequency table</p>
+    <p><b>Corpus</b> (<i>pl.</i> corpora): a large, representative collection of text</p>
+    <p><b>Multinomial distribution</b> for a \(k\)-sided die with probability vector \(\theta\), \(N\) throws, outcomes counts \(n_1, \cdots,n_k\)</p>
+    $$P(n_1,\cdots ,n_k|\theta) = \binom{N}{n_1 \cdots n_k} = \prod_{i=1}^{k} \theta_i^{n_i}$$
+    <p><b>The Maximum Likelihood Estimate (MLE)</b></p>
+    <p><b>The Maximum A Posterior (MAP) Estimate</b></p>
+    <p><b>Language modeling</b>: tries to capture the notion that some text is more likely than others by estimating the probability \(P(s)\) of any text \(s\)</p>
+    <p><b>Unigram Language Model</b>: makes a strong <i>independence assumption</i> that words are generated independenyl from a multinomial distribution \(\theta\) (of dimension \(V\) = size of the vocabulary)</p>
+    <p><b>N-gram Language Models</b></p>
+    <p><b>Smoothing</b></p>
+    add-1 smoothing
+    $$\hat{\theta_w} = \frac{c_w + 1}{|C| + V'}$$
+    add-&isin; smoothing
+    $$\hat{\theta_w} = \frac{c_w + \in}{|C| + V\in'}$$
 
     <h2>Linear Algebra</h2>
 

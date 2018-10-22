@@ -1,127 +1,127 @@
 <head>
-  <title>Uninformed Search</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="main.css">
+	<title>Uninformed Search</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
-<h1>Uninformed Search</h1>
-<p>In an uninformed search, only the <b>goal test</b> and the <b>successor function</b> are known. Uninformed search algorithims generate a search tree without any domain specific knowledge, i.e. heuristic values.</p>
+	<h1>Uninformed Search</h1>
+	<p>In an uninformed search, only the <b>goal test</b> and the <b>successor function</b> are known. Uninformed search algorithims generate a search tree without any domain specific knowledge, i.e. heuristic values.</p>
 
-<ul>
-  <li><a href="usearch.html#bfs">Breadth-First Search</a></li>
-  <li><a href="usearch.html#ucs">Uniform Cost Search</a></li>
-  <li><a href="usearch.html#dfs">Depth-First Search</a></li>
-  <li><a href="usearch.html#ids">Iterative Deepening</a></li>
-  <li><a href="usearch.html#bibfs">Bidirectional Search</a></li>
-</ul>
+	<ul>
+		<li><a href="usearch.html#bfs">Breadth-First Search</a></li>
+		<li><a href="usearch.html#ucs">Uniform Cost Search</a></li>
+		<li><a href="usearch.html#dfs">Depth-First Search</a></li>
+		<li><a href="usearch.html#ids">Iterative Deepening</a></li>
+		<li><a href="usearch.html#bibfs">Bidirectional Search</a></li>
+	</ul>
 
-<article id="bfs">
-<h2>Breadth-First Search (BFS)</h2>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Breadth-First-Search-Algorithm.gif" alt="Breadth-first search visualization">
-  <p>BFS expands the shallowest node first, then ripples out.</p>
-  <p>BFS uses a <b>queue</b>, which is a first-in-first-out (FIFO) data structure.</p>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/300px-Data_Queue.svg.png" alt="FIFO visualization">
-  <p><b>Pseudocode</b></p>
-  <script src="https://gist.github.com/jessicamiyake/0465b1e6884c2213feb7cbc1520ca144.js"></script>
-  <p><b>Complete? Yes!</b><br>
-  <b>Optimal? Yes if edge cost is constant</b><br>
-  <b>Time complexity: O(b<sup>d</sup>)</b><br>
-  <b>Space complexity: O(b<sup>d</sup>)</b><br>
-  where b = branching factor (assume finite), d = goal depth</p>
-</article>
+	<article id="bfs">
+		<h2>Breadth-First Search (BFS)</h2>
+  		<img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Breadth-First-Search-Algorithm.gif" alt="Breadth-first search visualization">
+		<p>BFS expands the shallowest node first, then ripples out.</p>
+  		<p>BFS uses a <b>queue</b>, which is a first-in-first-out (FIFO) data structure.</p>
+  		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/300px-Data_Queue.svg.png" alt="FIFO visualization">
+  		<p><b>Pseudocode</b></p>
+		<script src="https://gist.github.com/jessicamiyake/0465b1e6884c2213feb7cbc1520ca144.js"></script>
+  		<p><b>Complete? Yes!</b><br>
+  		<b>Optimal? Yes if edge cost is constant</b><br>
+  		<b>Time complexity: O(b<sup>d</sup>)</b><br>
+  		<b>Space complexity: O(b<sup>d</sup>)</b><br>
+  		where b = branching factor (assume finite), d = goal depth</p>
+	</article>
 
-<article id="ucs">
-  <h2>Uniform-Cost Search (UCS)</h2>
-  <p>UCS proceeds like BFS but instead of expanding the shallowest node, UCS expands the node with the least cost first. This is done using a <b>priority queue</b>.
-  <p><b>Complete? Yes!</b><br>
-  <b>Optimal? Yes!</b><br>
-  <b>Time complexity: O(b<sup>C*/&epsilon;</sup>)</b><br>
-  <b>Space complexity: O(b<sup>C*/&epsilon;</sup>)</b><br>
-  where b = branching factor (assume finite), C* = optimal path cost to the goal, &epsilon; = minimum cost of an action</p>
-</article>
+	<article id="ucs">
+  		<h2>Uniform-Cost Search (UCS)</h2>
+  		<p>UCS proceeds like BFS but instead of expanding the shallowest node, UCS expands the node with the least cost first. This is done using a <b>priority queue</b>.
+  		<p><b>Complete? Yes!</b><br>
+  		<b>Optimal? Yes!</b><br>
+  		<b>Time complexity: O(b<sup>C*/&epsilon;</sup>)</b><br>
+  		<b>Space complexity: O(b<sup>C*/&epsilon;</sup>)</b><br>
+  		where b = branching factor (assume finite), C* = optimal path cost to the goal, &epsilon; = minimum cost of an action</p>
+	</article>
 
-<article id="dfs">
-  <h2>Depth-First Search (DFS)</h2>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif" alt="Depth-first search visualization">
-  <p>DFS expands the deepest node first.</p>
-  <p>DFS uses a <b>stack</b>, which is a last-in-first-out (LIFO) data structure.</p>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lifo_stack.png/350px-Lifo_stack.png" alt="LIFO visualization">
-  <p><b>Pseudocode</b></p>
-  <script src="https://gist.github.com/jessicamiyake/7a7bf311e9c6ba828cadf84b68498a49.js"></script>
-  <p><b>Complete? Nope!</b><br>
-  <b>Optimal? Nope!</b><br>
-  <b>Time complexity: O(b<sup>m</sup>)</b><br>
-  <b>Space complexity: O(bm)</b><br>
-  where b = branching factor (assume finite), m = graph depth</p>
-</article>
+	<article id="dfs">
+  		<h2>Depth-First Search (DFS)</h2>
+  		<img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif" alt="Depth-first search visualization">
+  		<p>DFS expands the deepest node first.</p>
+  		<p>DFS uses a <b>stack</b>, which is a last-in-first-out (LIFO) data structure.</p>
+  		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lifo_stack.png/350px-Lifo_stack.png" alt="LIFO visualization">
+  		<p><b>Pseudocode</b></p>
+  		<script src="https://gist.github.com/jessicamiyake/7a7bf311e9c6ba828cadf84b68498a49.js"></script>
+  		<p><b>Complete? Nope!</b><br>
+  		<b>Optimal? Nope!</b><br>
+  		<b>Time complexity: O(b<sup>m</sup>)</b><br>
+  		<b>Space complexity: O(bm)</b><br>
+  		where b = branching factor (assume finite), m = graph depth</p>
+	</article>
 
-<article id="ids">
-  <h2>Iterative Deepening (IDS)</h2>
-  <p>IDS combines the completeness and optimality of BFS with smaller space complexity of DFS. IDS repeatedly performs DFS with a depth limit, incrementing the limit until the goal is found.</p>
-  <p><b>Complete? Yes!</b><br>
-  <b>Optimal? Yes if edge cost is constant</b><br>
-  <b>Time complexity: O(b<sup>d</sup>)</b><br>
-  <b>Space complexity: O(bd)</b><br>
-  where b = branching factor (assume finite), d = goal depth</p>
-</article>
+	<article id="ids">
+		<h2>Iterative Deepening (IDS)</h2>
+  		<p>IDS combines the completeness and optimality of BFS with smaller space complexity of DFS. IDS repeatedly performs DFS with a depth limit, incrementing the limit until the goal is found.</p>
+  		<p><b>Complete? Yes!</b><br>
+  		<b>Optimal? Yes if edge cost is constant</b><br>
+  		<b>Time complexity: O(b<sup>d</sup>)</b><br>
+  		<b>Space complexity: O(bd)</b><br>
+  		where b = branching factor (assume finite), d = goal depth</p>
+	</article>
 
-<article id="bibfs">
-  <h2>Bidirectional (Breadth-first) Search</h2>
-  <img src="/images/bibfs.png" alt="BIBFS visualization">
-  <p>Bidirectional search involves two simultaneous breadth-first searches, one that starts at the initial state and one that starts at the goal node.</p>
-  <p><b>Complete? Yes!</b><br>
-  <b>Optimal? Yes if edge cost is constant</b><br>
-  <b>Time complexity: O(b<sup>d/2</sup>)</b><br>
-  <b>Space complexity: O(b<sup>d/2</sup>)</b><br>
-  where b = branching factor (assume finite), d = goal depth</p>
-</article>
+	<article id="bibfs">
+  		<h2>Bidirectional (Breadth-first) Search</h2>
+  		<img src="/cs540/images/bibfs.png" alt="BIBFS visualization">
+  		<p>Bidirectional search involves two simultaneous breadth-first searches, one that starts at the initial state and one that starts at the goal node.</p>
+  		<p><b>Complete? Yes!</b><br>
+  		<b>Optimal? Yes if edge cost is constant</b><br>
+  		<b>Time complexity: O(b<sup>d/2</sup>)</b><br>
+  		<b>Space complexity: O(b<sup>d/2</sup>)</b><br>
+  		where b = branching factor (assume finite), d = goal depth</p>
+	</article>
 
-<table>
-  <caption>Comparison of Uninformed Searches Performance</caption>
-  <tr>
-    <td></td>
-    <td>Complete</td>
-    <td>Optimal</td>
-    <td>Time</td>
-    <td>Space</td>
-  </tr>
-  <tr>
-    <td>BFS</td>
-    <td>Yes</td>
-    <td>Yes if*</td>
-    <td>O(b<sup>d</sup>)</td>
-    <td>O(b<sup>d</sup>)</td>
-  </tr>
-  <tr>
-    <td>UCS</td>
-    <td>Yes</td>
-    <td>Yes</td>
-    <td>O(b<sup>C*/&epsilon;</sup>)</td>
-    <td>O(b<sup>C*/&epsilon;</sup>)</td>
-  </tr>
-  <tr>
-    <td>DFS</td>
-    <td>No</td>
-    <td>No</td>
-    <td>O(b<sup>m</sup>)</td>
-    <td>O(bm)</td>
-  </tr>
-  <tr>
-    <td>IDS</td>
-    <td>Yes</td>
-    <td>Yes if*</td>
-    <td>O(b<sup>d</sup>)</td>
-    <td>O(bd)</td>
-  </tr>
-  <tr>
-    <td>BIBFS</td>
-    <td>Yes</td>
-    <td>Yes if*</td>
-    <td>O(b<sup>d/2</sup>)</td>
-    <td>O(b<sup>d/2</sup>)</td>
-  </tr>
-</table>
-<p>b = branching factor, d = goal depth, m = graph depth, C* = optimal path cost to the goal, &epsilon; = minimum cost of an action</p>
-<p>*edge cost is constant or positive non-decreasing in depth</p>
+	<b>Comparison of Uninformed Searches Performance</b>
+	<table>
+  		<tr>
+    		<td></td>
+   			<td>Complete</td>
+    		<td>Optimal</td>
+    		<td>Time</td>
+    		<td>Space</td>
+  		</tr>
+  		<tr>
+    		<td>BFS</td>
+    		<td>Yes</td>
+    		<td>Yes if*</td>
+    		<td>O(b<sup>d</sup>)</td>
+    		<td>O(b<sup>d</sup>)</td>
+  		</tr>
+  		<tr>
+    		<td>UCS</td>
+    		<td>Yes</td>
+    		<td>Yes</td>
+    		<td>O(b<sup>C*/&epsilon;</sup>)</td>
+    		<td>O(b<sup>C*/&epsilon;</sup>)</td>
+  		</tr>
+  		<tr>
+    		<td>DFS</td>
+    		<td>No</td>
+    		<td>No</td>
+    		<td>O(b<sup>m</sup>)</td>
+    		<td>O(bm)</td>
+  		</tr>
+  		<tr>
+    		<td>IDS</td>
+    		<td>Yes</td>
+    		<td>Yes if*</td>
+    		<td>O(b<sup>d</sup>)</td>
+    		<td>O(bd)</td>
+  		</tr>
+  		<tr>
+    		<td>BIBFS</td>
+    		<td>Yes</td>
+    		<td>Yes if*</td>
+    		<td>O(b<sup>d/2</sup>)</td>
+    		<td>O(b<sup>d/2</sup>)</td>
+  		</tr>
+	</table>
+	<p>b = branching factor, d = goal depth, m = graph depth, C* = optimal path cost to the goal, &epsilon; = minimum cost of an action</p>
+	<p>*edge cost is constant or positive non-decreasing in depth</p>
 </body>

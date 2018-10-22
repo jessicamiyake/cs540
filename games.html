@@ -1,5 +1,6 @@
 <head>
 <title>Game Playing</title>
+<meta charset="utf-8>
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
@@ -13,6 +14,14 @@
 <b>Game Theoretic Value</b> (minimax value) = the score of the terminal node that will be reached if both players play optimally
 
 <h2>Minimax Algorithm</h2>
+<p>The minimax algorithm is implemented as a modified version of <b>DFS</b>. Game theoretic value is computed from the bottom up, with the Max player choosing the highest score possible and the Min player choosing the lowest score.</p>
+<script src="https://gist.github.com/jessicamiyake/45f25ee57613ef26b196bb0f9944e9d7.js"></script>
+<b>Time Complexity</b>: O(b<sup>m</sup>)
+<b>Space Complexity</b>: O(bm)
 
 <h2>Alpha-Beta Pruning</h2>
+<p>Alpha-beta is a search algorithm that restricts the set of possible solutions based on the portion of the search tree that has already been seen.</p>
+<p><b>&alpha;</b> = the <i>maximum lower bound</i> of possible solutions, the best Max can do</p>
+<p><b>&beta;</b> = the <i>minimum upper bound</i> of possible solutions, the best Min can do</p>
+<script src="https://gist.github.com/jessicamiyake/cd1f14e4cd9cf70bf33359c001834dd4.js"></script>
 </body>

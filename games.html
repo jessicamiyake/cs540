@@ -6,17 +6,17 @@
 
 <body>
 <h1>Game Playing</h1>
-<b>Zero-sum</b>: one player's loss is the other's gain
-<b>Discrete</b>: states and decisions have discrete values
-<b>Finite</b>: countable number of states and decisions
-<b>Deterministic</b>: not up to chance (like dice rolls or coin flips)
-<b>Perfect information</b>: each player can see the complete game state, no simultaneous decisions
+<b>Zero-sum</b>: one player's loss is the other's gain<br>
+<b>Discrete</b>: states and decisions have discrete values<br>
+<b>Finite</b>: countable number of states and decisions<br>
+<b>Deterministic</b>: not up to chance (like dice rolls or coin flips)<br>
+<b>Perfect information</b>: each player can see the complete game state, no simultaneous decisions<br>
 <b>Game Theoretic Value</b> (minimax value) = the score of the terminal node that will be reached if both players play optimally
 
 <h2>Minimax Algorithm</h2>
-<p>The minimax algorithm is implemented as a modified version of <b>DFS</b>. Game theoretic value is computed from the bottom up, with the Max player choosing the highest score possible and the Min player choosing the lowest score.</p>
+<p>The minimax algorithm is implemented as a modified version of <a href="https://jessicamiyake.github.io/cs540/usearch.html#dfs">DFS</a>. Game theoretic value is computed from the bottom up, with the Max player choosing the highest score possible and the Min player choosing the lowest score.</p>
 <script src="https://gist.github.com/jessicamiyake/45f25ee57613ef26b196bb0f9944e9d7.js"></script>
-<b>Time Complexity</b>: O(b<sup>m</sup>)
+<b>Time Complexity</b>: O(b<sup>m</sup>)<br>
 <b>Space Complexity</b>: O(bm)
 
 <h2>Alpha-Beta Pruning</h2>

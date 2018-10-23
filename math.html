@@ -9,6 +9,14 @@
     <h1>Math</h1>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/gENVB6tjq_M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+    <ul>
+    	<li><a href="math.html#prob">Probability and Statistics</a></li>
+    	<li><a href="math.html#nlp">Natural Language Processing</a></li>
+    	<li><a href="math.html#lnalg">Linear Algebra</a></li>
+    	<li><a href="math.html#pca">Principle Component Analysis</a></li>
+    </ul>
+
+    <article id="prob">
     <h2>Probability and Statistics</h2>
 	<p><b>Sample space</b>: a space of events that are assigned probabilities, where events are binary, multi-valued, or continuous; but always mutually exclusive</p>
 	<p class="examples">Examples
@@ -22,7 +30,6 @@
 		<li>\(x\) = tomorrow's temperature</li>
 	</ul></p>
 	
-	<article id="axioms">
 	<h3>The Axioms of Probability</h3>
 	<ol>
 		<li>For event \(A, P(A) &isin; [0,1]\)</li>
@@ -31,7 +38,6 @@
 		It follows that for disjoint events \(A\) and \(B\)<br>
 		\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</li>
 	</ol>
-	</article>
 	
 	<p><b>Joint probability</b>: the probability of two events occurring together at the same point in time.</p>
 	$$P(A, B) = P(A \cap B) = P(A)*P(B)$$
@@ -65,7 +71,9 @@
 
 	<p><b>Conditional independence</b>: two events \(A\) and \(B\) are conditionally independent given an event \(C\)</p>
 	$$P(A| B,C) = \frac{P(A \cap B |C)}{P(B|C)} = \frac{P(A|C)P(B|C)}{P(B|C)} = P(A|C)$$
-	
+	</article>
+
+	<article id="nlp">
     <h2>Natural Language Processing</h2>
     <p><b>Word token</b>: occurrences of a word</p>
     <p><b>Word type</b>: unique word</p>
@@ -84,9 +92,49 @@
     $$\hat{\theta_w} = \frac{c_w + 1}{|C| + V'}$$
     add-&isin; smoothing
     $$\hat{\theta_w} = \frac{c_w + \in}{|C| + V\in'}$$
+	</article>
 
+	<article id="lnalg">
     <h2>Linear Algebra</h2>
-	
+	<b>Scalar</b>: a number, has magnitude (1 &times; 1)<br>
+	<b>Vector</b>: a list of numbers, has magnitude and direction (default column vector n &times; 1)<br>
+	<b>Matrix</b>: an array of numbers (m &times; n)
+	<h3>Matrix Basics</h3>
+	<p><b>Transpose</b>: \((A^T)_{ij} = A_{ji}\) and \((A+B)^{\top} = A^{\top}+B^{\top}\) and \((AB)^{\top} = B^{\top}A^{\top}\). If \(A = A^{\top}\) then matrix \(A\) is <b>symmetric</b></p>
+	$$\begin{bmatrix} 1 & 2 & 3 \\
+	4 & 5 & 6 \end{bmatrix}^\top = 
+	\begin{bmatrix} 1 & 4 \\
+	2 & 5 \\
+	3 & 6 \end{bmatrix}$$
+	<p><b>Multiplication</b>: if matrix \(A\) is \(m \times n\) and matrix \(B\) is \(n \times p\), then \(AB = C\) and \(C\) is \(m \times p\) and \(C_{ij} = \sum\limits_{k=1}^m A_{ik}B_{kj}\) and generally \(AB \neq BA\)</p>
+	$$\begin{bmatrix} 2 & 8 & 3 \\
+	5 & 4 & 1 \end{bmatrix}
+	\begin{bmatrix} 4 & 1 \\
+	6 & 3 \\
+	2 & 4 \end{bmatrix} = 
+	\begin{bmatrix} 2(4)+8(6)+3(2) & 2(1)+8(3)+3(4) \\
+	5(4)+4(6)+1(2) & 5(1)+4(3)+1(4) \end{bmatrix} = 
+	\begin{bmatrix} 62 & 38 \\
+	46 & 21 \end{bmatrix}$$
+	<h3>Square Matrices</h3>
+	<p><b>Diagonal Matrix</b>: nonzero entries along diagonal, zeroes elsewhere (example is 3 &times; 3 but can be any size)</p>
+	$$\begin{bmatrix} x_1 & 0 & 0 \\
+	0 & x_2 & 0 \\
+	0 & 0 & x_3 \end{bmatrix}$$
+	<p><b>Determinant of a Matrix</b>: scaling factor of the linear transformation described by the matrix, written as \(det(A)\) or \(|A|\) and matrix \(A\) is invertible iff \(|A| \neq 0\). If \(|A| = 0\) then matrix \(A\) is <b>singular</b> and therefore <b>linearly dependent</b></p>
+	$$|A| = \begin{vmatrix} a & b \\
+	c & d \end{vmatrix} = ad - bc, |A^{-1}| = \frac{1}{|A|}$$
+	<p><b>Inverse of a Matrix</b>: matrix \(A^{-1}\) such that \(AA^{-1} = I\), where \(I\) is the identity matrix. \((AB)^{-1} = B^{-1}A^{-1}\) and \((A^{\top})^{-1} = (A^{-1})^{\top}\)</p>
+	$$A = \begin{bmatrix} a & b \\
+	c & d \end{bmatrix}, A^{-1} = \frac{1}{det(A)} adj(A) = 
+	\frac{1}{ad-bc} \begin{bmatrix} d & -b \\
+	-c & a \end{bmatrix}$$
+	<p><b>Identity Matrix</b>: diagonal matrix whose nonzero entries are all 1. \(AI = IA = A\) and \(AA^{-1} = A^{-1}A = I\)</p>
+	<p><b>Eigenstuff</b></p>
+	</article>
+
+	<article id="pca">
     <h2>Prinicipal Component Analysis</h2>
+	</article>
     
 </body>

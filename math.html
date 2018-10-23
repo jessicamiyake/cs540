@@ -130,11 +130,22 @@
 	\frac{1}{ad-bc} \begin{bmatrix} d & -b \\
 	-c & a \end{bmatrix}$$
 	<p><b>Identity Matrix</b>: diagonal matrix whose nonzero entries are all 1. \(AI = IA = A\) and \(AA^{-1} = A^{-1}A = I\)</p>
-	<p><b>Eigenstuff</b></p>
+	<p><b>Trace of a Matrix</b>: sum of elements along the diagonal, for \(n \times n\) matrix \(A\), \(tr(A) = \sum\limits_{i=1}^n a_{ii}\)</p>
+	$$A = \begin{bmatrix}\def\b{\color{blue}} \b 1 & 2 & 3 \\
+	4 & \b 5 & 6 \\
+	7 & 8 & \b 9 \end{bmatrix}, tr(A) = 1+5+9 = 15$$
+	<p><b>Eigenspaces</b></p>
+	A \(m \times m\) matrix \(A\) has \(m\) <b>eigenvalues</b> &lambda; and \(m\) <b>eigenvectors</b> \(x_i\) such that \(Ax_1 = \lambda x_i\). <a href="https://piazza.com/class/jlmhmm29tn87jk?cid=366">It is not necessary to know how to compute eigen decomposition</a>>, but the general form used to do so is \(det(A- \lambda I) = 0\).
 	</article>
+
+	<article id="calc">
+	<h2>Calculus</h2>
+	</article>
+	i will shit ten thousand bricks if the exam requires calculus but i will try to update this section later today
 
 	<article id="pca">
     <h2>Prinicipal Component Analysis</h2>
+    <p>PCA is a dimension-reduction tool that can be used to reduce a large set of variables to a small set that still contains most of the information in the large set. This procedure transforms a number of possibily correlated variables into a smaller number of uncorrelated variables called <b>principal components</b>. PCA is traditionally performed on a <b>square, symmetric</b> matrix.
 	</article>
     
 </body>

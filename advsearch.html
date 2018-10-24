@@ -1,16 +1,56 @@
 <head>
   <title>Advanced Search</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
 <h1>Advanced Search</h1>
-<p>For these advanced searches, the goal is to find a node <i>n</i> such that <i>f(n) &ge; f(i)</i> for all nodes <i>i</i> in the state space.</p>
+<p>For these advanced searches, the goal is to find a node <i>n</i> such that <i>f(n) &ge; f(i)</i> for all nodes <i>i</i> in the state space. The goal is to find the state with the <b>highest</b> score.</p>
 
 <h2>Hill-Climbing</h2>
+<p>Looks at all immediate neighbors of current state <i>m</i> to find a successor <i>n</i> such that <i>f(n) > f(m)</i> and <i>f(n) \geq f(t)</i> for all successors <i>t</i> of <i>m</i>, then move from <i>m</i> to <i>n</i>. If no such <i>n</i> is found, halt.</p>
+<p>Not complete, terminates at <b>local maxima</b>.</p>
+<p><b>Pseudocode</b></p>
+<ol>
+	<li>Pick initial state <i>s</i></li>
+	<li>Pick <i>t</i> in neighbors(<i>s</i>) with largest <i>f(t)</i></li>
+	<li>if(<i>f(t) &le; f(s)</i>) then STOP, return <i>s</i></li>
+	<li><i>s = t</i>. GOTO 2</li>
+</ol>
+<p><b>Repeated Hill Climbing with Random Restarts</b></p>
+<ol>
+	<li>When stuck, pick random new start and run basic hill climbing</li>
+	<li>Repeat <i>k</i> times</li>
+	<li>Return the best of the <i>k</i> local optima</li>
+</ol>
 
 <h2>Simulated Annealing</h2>
+<p>Instead of picking the best move, simulated annealing picks a random move and checks successor. If the successor is an improvement over the current state, the move is made; otherwise make the move with some small probability < 1. The probability decreases exponentially with the badness of the move.</p>
+<p><b>Pseudocode</b></p>
+<ol>
+	<li>Pick initial state <i>s</i></li>
+	<li>Randomly pick <i>t</i> in the neighbors(<i>s</i>)</li>
+	<li>if(<i>f(t)</i> better) then accept s &larr; t</li>
+	<li>else accept <i>s</i> &larr; <i>t</i> with small probability</li>
+	<li>GOTO 2 until bored</li>
+</ol>
 
 <h2>Genetic Algorithm</h2>
+<img src="./images/geneticalg.PNG" alt="Genetic algorithim visualization">
+<p><b>Pseudocode</b></p>
+<ol>
+	<li>Let <i>s<sub>1</sub>,...,s<sub>N</sub> be the current population</i></li>
+	<li>Let <i>p<sub>i</sub> = f(s<sub>i</sub>)/&sum;<sub>j</sub>f(s<sub>j</sub>)</i> be the reproduction probability</li>
+	<li>for(<i>k</i> = 1; <i>k</i> < <i>N</i>; <i>k</i> += 2)</li>
+	<ul>
+		<li>parent1 = randomly pick according to <i>p</i></li>
+		<li>parent2 = randomly pick another</li>
+		<li>randomly select a crossover point, swap strings of parents 1, 2 to generate childern <i>t[k]</i>, <i>t[k+1]</i></li>
+	</ul>
+	<li>for(<i>k</i> = 1; <i>k</i> &le; <i>N</i>; <i>k</i>++)</li>
+	<ul><li>randomly mutate each position in <i>t</i>[<i>k</i>] with a small probability (mutation rate)</li></ul>
+	<li>The new generation replaces the old: {<i>s</i>} &larr; {<i>t</i>}. Repeat.</li>
+</ol>
+
 </body>

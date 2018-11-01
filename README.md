@@ -10,3 +10,5 @@
 [Games](https://jessicamiyake.github.io/cs540/games.html)
 
 [Math](https://jessicamiyake.github.io/cs540/math.html)
+
+[Logic](https://jessicamiyake.github.io/cs540/math.html)

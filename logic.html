@@ -1,7 +1,87 @@
 <head>
     <title>Logic</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 </head>
 
 <body>
     <h1>Logic</h1>
+    <p><b>sentence</b>: a boolean-valued formula with no free variables, generally assumed to have correct syntax<br>
+    <b>syntax</b>: proper formatting of sentence<br>
+    <b>semantics</b>: meaning of sentence, defines <i>truth</i> according to the <i>model</i><br>
+    <b>truth</b>: in standard logic, the property of being either strictly TRUE or strictly FALSE, i.e., boolean (fuzzy logic allows for degrees of truth)<br>
+    <b>model</b> (possible world): the environment in which the sentence exists, i.e., the assignment of values to the variables in the sentence<br>
+    <b>satisfaction</b>: if a sentence \(\alpha\) is true in model \(m\), then \(m\) satisfies \(\alpha\) and \(M(\alpha)\) represents the set of all models of \(\alpha\)<br>
+    <b>inference procedure</b>: deriving , generally by reasoning then entailment<br>
+    <b>entailment</b>: the idea that a sentence \(\beta\) follows logically from another sentence or sentences \(\alpha\) (the knowledge base), denoted as \(\alpha \models \beta\)<br>
+    <b>resolution</b>:
+    <ul>
+    	<li>Propositional Logic (Boolean logic)</li>
+    	<li>First-Order Logic (first order predicate calculus)</li>
+    </ul>
+
+    <article id="prop">
+    	<h2>Propositional Logic</h2>
+    	<b>Logical Connectives</b>, in descending order of precedence
+    	<table>
+    		<tr><td>Negation</td>
+    			<td>\(\neg\)</td>
+    			<td>"not"</td></tr>
+    		<tr><td>Conjunction</td>
+    			<td>\(\land)\</td>
+    			<td>"and"</td></tr>
+    		<tr><td>Disjunction</td>
+    			<td>\(\lor\)</td>
+    			<td>"or"</td></tr>
+    		<tr><td>Implication</td>
+    			<td>\(\Rightarrow\)</td>
+    			<td>"if...then"</td></tr>
+    		<tr><td>Biconditional</td>
+    			<td>\(\Leftrightarrow\) or \(\equiv\)</td>
+    			<td>"if and only if"</td></tr>
+    	</table>
+
+    	<b>Truth Table for Logical Connectives</b>
+    	<table>
+    		<th><td>P</td>
+    			<td>Q</td>
+    			<td>\(\neg\)P</td>
+    			<td>P \(\land\) Q</td>
+    			<td>P \(\lor\) Q</td>
+    			<td>P \(\Rightarrow\) Q</td>
+    			<td>P \(\Leftrightarrow\) Q</td></th>
+    		<tr><td>F</td>
+    			<td>F</td>
+    			<td>T</td>
+    			<td>F</td>
+    			<td>F</td>
+    			<td>T</td>
+    			<td>T</td></tr>
+    		<tr><td>F</td>
+    			<td>T</td>
+    			<td>T</td>
+    			<td>F</td>
+    			<td>T</td>
+    			<td>T</td>
+    			<td>F</td></tr>
+    		<tr><td>T</td>
+    			<td>F</td>
+    			<td>F</td>
+    			<td>F</td>
+    			<td>T</td>
+    			<td>F</td>
+    			<td>F</td></tr>
+    		<tr><td>T</td>
+    			<td>T</td>
+    			<td>F</td>
+    			<td>T</td>
+    			<td>T</td>
+    			<td>T</td>
+    			<td>T</td></tr>
+    	</table>
+
+
+    </article>
+
 </body>

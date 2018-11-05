@@ -6,6 +6,10 @@ ul #nav {
   list-style-type: none;
 }
 
+li a {
+  display: block;
+}
+
 table {
   border-collapse: collapse;
 }

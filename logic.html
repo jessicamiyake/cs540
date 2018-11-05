@@ -15,7 +15,7 @@
     <b>satisfaction</b>: if a sentence \(\alpha\) is true in model \(m\), then \(m\) satisfies \(\alpha\) and \(M(\alpha)\) represents the set of all models of \(\alpha\)<br>
     <b>inference procedure</b>: deriving , generally by reasoning then entailment<br>
     <b>entailment</b>: the idea that a sentence \(\beta\) follows logically from another sentence or sentences \(\alpha\) (the knowledge base), denoted as \(\alpha \models \beta\)<br>
-    <b>resolution</b>:
+    <b>resolution</b>: a single inference rule, resolution is <i>sound</i> when it only derives entailed sentences, it is <i>complete</i> when it can derive any entailed sentence</p>
     <ul>
     	<li>Propositional Logic (Boolean logic)</li>
     	<li>First-Order Logic (first order predicate calculus)</li>
@@ -40,17 +40,16 @@
     		<tr><td>Biconditional</td>
     			<td>\(\Leftrightarrow\) or \(\equiv\)</td>
     			<td>"if and only if"</td></tr>
-    	</table>
-
+    	</table><br>
     	<b>Truth Table for Logical Connectives</b>
     	<table>
-    		<th><td>P</td>
-    			<td>Q</td>
-    			<td>\(\neg\)P</td>
-    			<td>P \(\land\) Q</td>
-    			<td>P \(\lor\) Q</td>
-    			<td>P \(\Rightarrow\) Q</td>
-    			<td>P \(\Leftrightarrow\) Q</td></th>
+    		<tr><th>P</th>
+    			<th>Q</th>
+    			<th>\(\neg\)P</th>
+    			<th>P \(\land\) Q</th>
+    			<th>P \(\lor\) Q</th>
+    			<th>P \(\Rightarrow\) Q</th>
+    			<th>P \(\Leftrightarrow\) Q</th></tr>
     		<tr><td>F</td>
     			<td>F</td>
     			<td>T</td>
@@ -79,9 +78,46 @@
     			<td>T</td>
     			<td>T</td>
     			<td>T</td></tr>
+    	</table><br>
+    	<b>Logical Equivalences</b>
+    	<table>
+    		<tr><td>Commutativity of \(\land\)</td>
+    			<td>\(\alpha \land \beta \equiv \beta \land \alpha\)</td></tr>
+    		<tr><td>Commutativity of \(\lor\)</td>
+    			<td>\(\alpha \lor \beta \equiv \beta \lor \alpha\)</td></tr>
+    		<tr><td>Associativity of \(\land\)</td>
+    			<td>\((\alpha \land \beta) \land \gamma \equiv \alpha \land (\beta \land \gamma)\)</td></tr>
+    		<tr><td>Associativity of \(\lor\)</td>
+    			<td>\((\alpha \lor \beta) \lor \gamma \equiv \alpha \lor (\beta \lor \gamma)\)</td></tr>
+    		<tr><td>Double-negation elimination</td>
+    			<td>\(\neg(\neg \alpha) \equiv \alpha\)</td></tr>
+    		<tr><td>Contraposition</td>
+    			<td>\(\alpha \Rightarrow \beta \equiv \neg \beta \Rightarrow \neg \alpha\)</td></tr>
+    		<tr><td>Implication elimination</td>
+    			<td>\(\alpha \Rightarrow \beta \equiv \neg \alpha \lor \beta\)</td></tr>
+    		<tr><td>Implication elimination</td>
+    			<td>\(\alpha \Leftrightarrow \beta \equiv (\alpha \Rightarrow \beta) \land (\beta \Rightarrow \alpha)\)</td></tr>
+    		<tr><td>deMorgan's</td>
+    			<td>\(\neg (\alpha \land \beta) \equiv \neg \alpha \lor \neg \beta\)</td></tr>
+    		<tr><td>deMorgan's</td>
+    			<td>\(\neg (\alpha \lor \beta) \equiv \neg \alpha \land \neg \beta\)</td></tr>
+    		<tr><td>Distributivity of \(\land\) over \(\lor\)</td>
+    			<td>\(\alpha \land (\beta \lor \gamma) \equiv (\alpha \land \beta) \lor (\alpha \land \gamma)\)</td></tr>
+    		<tr><td>Distributivity of \(\lor\) over \(\land\)</td>
+    			<td>\(\alpha \lor (\beta \land \gamma) \equiv (\alpha \lor \beta) \land (\alpha \lor \gamma)\)</td></tr>
     	</table>
-
+    	<p><b>Conjunctive Normal Form (CNF)</b></p>
+    	<p>A statement is in CNF if it is a conjunction (sequence of ANDs) of one or more disjunctions (sequences of ORs) of literals (variables or negation of variables)</p>
+    	<p><b>CNF Conversion</b></p>
+    	<ol><li>Replace all \(\Leftrightarrow\) using biconditional elimination</li>
+    		<li>Replace all \(\Rightarrow\) using implication elimination</li>
+    		<li>Move all negations inward using double-negation elimination and/or deMorgan's rule</li>
+    		<li>Apply distributivity of \(\lor\) over \(\land\)</li></ol>
+    	<p><b>Resolution</b></p>
 
     </article>
 
+    <article id="fol">
+    	<h2>First-Order Logic</h2>
+    </article>
 </body>

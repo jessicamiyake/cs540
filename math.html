@@ -135,7 +135,7 @@
 	4 & \b 5 & 6 \\
 	7 & 8 & \b 9 \end{bmatrix}, tr(A) = 1+5+9 = 15$$
 	<p><b>Eigenspaces</b></p>
-	A \(m \times m\) matrix \(A\) has \(m\) <b>eigenvalues</b> &lambda; and \(m\) <b>eigenvectors</b> \(x_i\) such that \(Ax_1 = \lambda x_i\). <a href="https://piazza.com/class/jlmhmm29tn87jk?cid=366">It is not necessary to know how to compute eigen decomposition</a>>, but the general form used to do so is \(det(A- \lambda I) = 0\).
+	A \(m \times m\) matrix \(A\) has \(m\) <b>eigenvalues</b> &lambda; and \(m\) <b>eigenvectors</b> \(x_i\) such that \(Ax_1 = \lambda x_i\). <a href="https://piazza.com/class/jlmhmm29tn87jk?cid=366">It is not necessary to know how to compute eigen decomposition</a>, but the general form used to do so is \(det(A- \lambda I) = 0\).
 	</article>
 
 	<article id="calc">
@@ -156,7 +156,7 @@
 		$$\mu = frac{1}{n} \sum_{i=1}^{n} x_i, x_i = x_i - \mu$$
 		<li>Compute the sample covariance matrix \(S\) using a matrix of the centered data \(X\) that will be \(n \times D\)</li>
 		$$S = frac{1}{n-1} X^{\intercal}X$$
-		<li>Perform eigen decomposition. <a href="https://piazza.com/class/jlmhmm29tn87jk?cid=366"><b>You do not need to know how to do this!</b></a> Use <a href="http://www.bluebit.gr/matrix-calculator/">this site</li> to calculate eigenvalues \(\lambda_1, \dots, \lambda_D\) and corresponding eigenvectors \(u_1, \dots, \u_D\)</li>
+		<li>Perform eigen decomposition. <a href="https://piazza.com/class/jlmhmm29tn87jk?cid=366"><b>You do not need to know how to do this!</b></a> Use <a href="http://www.bluebit.gr/matrix-calculator/">this site</a> to calculate eigenvalues \(\lambda_1, \dots, \lambda_D\) and corresponding eigenvectors \(u_1, \dots, \u_D\)</li>
 		$$S = U \Lambda U^{intercal}, U = \begin{bmatrix} u_1 & \dots & u_D \end{bmatrix}, \Lambda = \begin{bmatrix} \lambda_1 & 0 & 0 \\ \vdots & \ddots & 0 \\ 0 & \dots & \lambda_D \end{bmatrix}$$
 		<li>Compute the first principal component \(v_1\) of dimension \(d\) where \(d < D\) i'll finish this later lol</li>
 	</ol>

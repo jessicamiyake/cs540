@@ -151,10 +151,16 @@
 	<article id="pca">
     	<h2>Prinicipal Component Analysis</h2>
     	<p>PCA is a dimension-reduction tool that can be used to reduce a large set of variables to a small set that still contains most of the information in the large set. This procedure transforms a number of possibily correlated variables into a smaller number of uncorrelated variables called <b>principal components</b>. PCA is traditionally performed on a <b>square, symmetric</b> matrix.</p>
-	<p><b>PCA Resources</b></p>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/kw9R0nD69OU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	<p><a href="https://onlinecourses.science.psu.edu/stat505/node/51/">Linear Algebra explanation</a></p>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/FgakZw6K1QQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<ol>
+		<li>Let \(x_1, \dots, x_n \in \mathbb{R}^D\) where \(\mathbb{R}^D\) is the set of all real numbers in the \(D^{th}\)-dimension. PCA is to be performed on a set of <i>centered</i> points, i.e., \(\sum_i x_i = 0\). Center the data by computing the sample mean, \(\mu\) and subtracting it from each data point.</li>
+		$$\mu = frac{1}{n} \sum_{i=1}^{n} x_i, x_i = x_i - \mu$$
+		<li>Compute the sample covariance matrix \(S\) using a matrix of the centered data \(X\) that will be \(n \times D\)</li>
+		$$S = frac{1}{n-1} X^{\intercal}X$$
+		<li>Perform eigen decomposition. <a href="https://piazza.com/class/jlmhmm29tn87jk?cid=366"><b>You do not need to know how to do this!</b></a> Use <a href="http://www.bluebit.gr/matrix-calculator/">this site</li> to calculate eigenvalues \(\lambda_1, \dots, \lambda_D\) and corresponding eigenvectors \(u_1, \dots, \u_D\)</li>
+		$$S = U \Lambda U^{intercal}, U = \begin{bmatrix} u_1 & \dots & u_D \end{bmatrix}, \Lambda = \begin{bmatrix} \lambda_1 & 0 & 0 \\ \vdots & \ddots & 0 \\ 0 & \dots & \lambda_D \end{bmatrix}$$
+		<li>Compute the first principal component \(v_1\) of dimension \(d\) where \(d < D\) i'll finish this later lol</li>
+	</ol>
+		
 	</article>
     
 </body>
